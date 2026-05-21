@@ -1,4 +1,3 @@
-import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
 export const Home = () => {
@@ -7,10 +6,17 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
+			<div className="row justify-content-center">
+				<div className="col-md-3">
+					<div className="card p-3 text-center">Personajes</div>
+				</div>
+				<div className="col-md-3">
+					<div className="card p-3 text-center">Planetas</div>
+				</div>
+				<div className="col-md-3">
+					<div className="card p-3 text-center">Vehículos</div>
+				</div>
+			</div>
 		</div>
 	);
 }; 
