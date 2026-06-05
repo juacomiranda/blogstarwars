@@ -5,9 +5,9 @@ export const Personajes = () => {
     const { store, dispatch } = useGlobalReducer()
 
     useEffect(() => {
-        fetch("https://www.swapi.tech/api/people/")
+        fetch("https://akabab.github.io/starwars-api/api/all.json")
             .then(res => res.json())
-            .then(data => dispatch({ type: "set_personajes", payload: data.results }))
+            .then(data => dispatch({ type: "set_personajes", payload: data }))
     }, [])
 
     return (
@@ -18,9 +18,10 @@ export const Personajes = () => {
                     <div className="col-3" key={i}>
                         <div className="card bg-dark text-light h-100">
                             <img
-                                src="https://placehold.co/300x200?text=Personaje"
+                                src={personaje.image}
                                 className="card-img-top"
                                 alt={personaje.name}
+                                onError={(e) => { e.target.src = "https://placehold.co/300x200?text=Personaje" }}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{personaje.name}</h5>
