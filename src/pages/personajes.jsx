@@ -19,9 +19,10 @@ export const Personajes = () => {
                         <div className="card bg-dark text-light h-100">
                             <img
                                 src={personaje.image}
-                                className="card-img-top"
+                                className="card-img-top object-fit-contain"
+                                style={{ height: "280px" }}
                                 alt={personaje.name}
-                                onError={(e) => { e.target.src = "https://placehold.co/300x200?text=Personaje" }}
+                                onError={(e) => { e.target.closest(".col-3").style.display = "none" }}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">{personaje.name}</h5>
